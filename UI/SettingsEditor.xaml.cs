@@ -26,9 +26,56 @@ namespace tman0.Launcher.UI
             InitializeComponent();
         }
 
+        public void Load()
+        {
+            this.Load(LauncherSettings.Default);
+        }
+
+        public void Load(LauncherSettings s)
+        {
+            InitialMemory.Text = s.InitialMemory;
+            MaxMemory.Text = s.MaxMemory;
+            JavaPath.Text = s.JavaLocation;
+            UseXincgc.IsChecked = s.UseXincgc;
+            UseServer.IsChecked = s.UseServer;
+            VMArgs.Text = s.VMArgs;
+        }
+
+        public void Save()
+        {
+            this.Save(LauncherSettings.Default);
+        }
+
+        public void Save(LauncherSettings s)
+        {
+            s.InitialMemory = InitialMemory.Text;
+            s.MaxMemory = MaxMemory.Text;
+            s.JavaLocation = JavaPath.Text;
+            s.UseXincgc = (bool)UseXincgc.IsChecked;
+            s.UseServer = (bool)UseServer.IsChecked;
+            s.VMArgs = VMArgs.Text;
+        }
+
         private void SettingsEditor_Loaded_1(object sender, RoutedEventArgs e)
         {
             this.GlassBackground();
+            this.Load();
+        }
+
+        private void Apply_Click(object sender, RoutedEventArgs e)
+        {
+            Save();
+        }
+
+        private void OK_Click(object sender, RoutedEventArgs e)
+        {
+            Save();
+            this.Hide();
+        }
+
+        private void Cancel_Click(object sender, RoutedEventArgs e)
+        {
+            this.Hide();
         }
     }
 }

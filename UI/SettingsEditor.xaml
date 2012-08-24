@@ -5,9 +5,9 @@
         ResizeMode="NoResize">
     <Grid>
         <Grid Background="#AA000000" VerticalAlignment="Bottom">
-            <Button HorizontalAlignment="Left" Margin="2,2,0,0" Height="22" VerticalAlignment="Top">Apply</Button>
-            <Button HorizontalAlignment="Center" Margin="2,2,2,2">Apply and Close</Button>
-            <Button HorizontalAlignment="Right" Margin="2,2,2,2">Cancel</Button>
+            <Button Name="Apply" HorizontalAlignment="Left" Margin="2,2,0,0" Height="22" VerticalAlignment="Top" Click="Apply_Click">Apply</Button>
+            <Button Name="OK" HorizontalAlignment="Center" Margin="2,2,2,2" Click="OK_Click">Apply and Close</Button>
+            <Button Name="Cancel" HorizontalAlignment="Right" Margin="2,2,2,2" Click="Cancel_Click">Cancel</Button>
         </Grid>
         <TabControl HorizontalAlignment="Left" Height="379" VerticalAlignment="Top" Width="323" Background="#0000">
             <TabItem Header="Java Settings">

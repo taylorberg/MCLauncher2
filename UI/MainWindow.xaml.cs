@@ -117,5 +117,10 @@ namespace tman0.Launcher.UI
         {
             this.Close();
         }
+
+        private void Setup_Click_1(object sender, RoutedEventArgs e)
+        {
+            Globals.Windows.SettingsEditor.ShowDialog();
+        }
     }
 }
