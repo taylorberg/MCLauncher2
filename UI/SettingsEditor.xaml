@@ -1,0 +1,72 @@
+﻿<Window x:Class="tman0.Launcher.UI.SettingsEditor"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        Title="Launcher Settings" Height="443" Width="339" Loaded="SettingsEditor_Loaded_1"
+        ResizeMode="NoResize">
+    <Grid>
+        <Grid Background="#AA000000" VerticalAlignment="Bottom">
+            <Button HorizontalAlignment="Left" Margin="2,2,0,0" Height="22" VerticalAlignment="Top">Apply</Button>
+            <Button HorizontalAlignment="Center" Margin="2,2,2,2">Apply and Close</Button>
+            <Button HorizontalAlignment="Right" Margin="2,2,2,2">Cancel</Button>
+        </Grid>
+        <TabControl HorizontalAlignment="Left" Height="379" VerticalAlignment="Top" Width="323" Background="#0000">
+            <TabItem Header="Java Settings">
+                <Grid Background="#0000">
+                    <Grid.ColumnDefinitions>
+                        <ColumnDefinition Width="90*"/>
+                        <ColumnDefinition Width="223*"/>
+                    </Grid.ColumnDefinitions>
+                    <Label Grid.Column="0" VerticalAlignment="Top" Height="25">Java Location</Label>
+                    <ComboBox Name="JavaPath" IsEditable="True" Grid.Column="1" VerticalAlignment="Top" Margin="0,0,25,0" Height="25">
+                        <ComboBoxItem>C:\Program Files (x86)\Java\jre6\bin</ComboBoxItem>
+                        <ComboBoxItem>C:\Program Files (x86)\Java\jre7\bin</ComboBoxItem>
+                        <ComboBoxItem>C:\Program Files\Java\jre6\bin</ComboBoxItem>
+                        <ComboBoxItem>C:\Program Files\Java\jre7\bin</ComboBoxItem>
+                    </ComboBox>
+                    <Button Name="BrowsePath" Grid.Column="1" VerticalAlignment="Top" Margin="0,0,0,0" HorizontalAlignment="Right" Height="25" Width="25">...</Button>
+                    <Button Name="ScanPath" Grid.Column="1" VerticalAlignment="Top" Margin="0,25,0,0" Height="25" IsEnabled="False">Scan for Java</Button>
+                    
+                    <Label Grid.Column="0" VerticalAlignment="Top" Height="25" Margin="0,50,0,0">Max Memory</Label>
+                    <ComboBox Name="MaxMemory" Grid.Column="1" VerticalAlignment="Top" IsEditable="True" Height="25" Margin="0,50,0,0">
+                        <ComboBoxItem>256M</ComboBoxItem>
+                        <ComboBoxItem>512M</ComboBoxItem>
+                        <ComboBoxItem>1G</ComboBoxItem>
+                        <ComboBoxItem>2G</ComboBoxItem>
+                        <ComboBoxItem>4G</ComboBoxItem>
+                        <ComboBoxItem>6G</ComboBoxItem>
+                        <ComboBoxItem>8G</ComboBoxItem>
+                        <ComboBoxItem>10G</ComboBoxItem>
+                        <ComboBoxItem>12G</ComboBoxItem>
+                        <ComboBoxItem>16G</ComboBoxItem>
+                        <ComboBoxItem>32G</ComboBoxItem>
+                        <Separator />
+                        <ComboBoxItem IsEnabled="False">All Available</ComboBoxItem>
+                    </ComboBox>
+                    <Label Grid.Column="0" VerticalAlignment="Top" Height="25" Margin="0,75,0,0">Initial Memory</Label>
+                    <ComboBox Name="InitialMemory" Grid.Column="1" VerticalAlignment="Top" IsEditable="True" Height="25" Margin="0,75,0,0">
+                        <ComboBoxItem>256M</ComboBoxItem>
+                        <ComboBoxItem>512M</ComboBoxItem>
+                        <ComboBoxItem>1G</ComboBoxItem>
+                        <ComboBoxItem>2G</ComboBoxItem>
+                        <ComboBoxItem>4G</ComboBoxItem>
+                        <ComboBoxItem>6G</ComboBoxItem>
+                        <ComboBoxItem>8G</ComboBoxItem>
+                        <ComboBoxItem>10G</ComboBoxItem>
+                        <ComboBoxItem>12G</ComboBoxItem>
+                        <ComboBoxItem>16G</ComboBoxItem>
+                        <ComboBoxItem>32G</ComboBoxItem>
+                        <Separator />
+                        <ComboBoxItem IsEnabled="False">All Available</ComboBoxItem>
+                    </ComboBox>
+                    <CheckBox Name="UseXincgc" Grid.ColumnSpan="2" Content="Use Incremental Garbage Collection (-Xincgc)" Margin="10,105,0,0" Height="25" VerticalAlignment="Top" />
+                    <CheckBox Name="UseServer" Grid.ColumnSpan="2" Content="Use Server VM (-server)" Margin="10,125,0,0" Height="25" VerticalAlignment="Top" />
+                    <Label Grid.Column="0" VerticalAlignment="Top" Margin="0,150,0,0">Other VM Args</Label>
+                    <TextBox Name="VMArgs" Grid.Column="1" VerticalAlignment="Top" Margin="0,150,0,0" Height="25"></TextBox>
+                </Grid>
+            </TabItem>
+            <TabItem Header="TabItem">
+                <Grid Background="#0000"/>
+            </TabItem>
+        </TabControl>
+    </Grid>
+</Window>
