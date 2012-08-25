@@ -16,7 +16,7 @@
                         <ColumnDefinition Width="90*"/>
                         <ColumnDefinition Width="223*"/>
                     </Grid.ColumnDefinitions>
-                    <Label Grid.Column="0" VerticalAlignment="Top" Height="25">Java Location</Label>
+                    <Label Grid.Column="0" Style="{StaticResource glassText}" VerticalAlignment="Top" Height="25">Java Location</Label>
                     <ComboBox Name="JavaPath" IsEditable="True" Grid.Column="1" VerticalAlignment="Top" Margin="0,0,25,0" Height="25">
                         <ComboBoxItem>C:\Program Files (x86)\Java\jre6\bin</ComboBoxItem>
                         <ComboBoxItem>C:\Program Files (x86)\Java\jre7\bin</ComboBoxItem>
@@ -26,7 +26,7 @@
                     <Button Name="BrowsePath" Grid.Column="1" VerticalAlignment="Top" Margin="0,0,0,0" HorizontalAlignment="Right" Height="25" Width="25">...</Button>
                     <Button Name="ScanPath" Grid.Column="1" VerticalAlignment="Top" Margin="0,25,0,0" Height="25" IsEnabled="False">Scan for Java</Button>
                     
-                    <Label Grid.Column="0" VerticalAlignment="Top" Height="25" Margin="0,50,0,0">Max Memory</Label>
+                    <Label Grid.Column="0" Style="{StaticResource glassText}" VerticalAlignment="Top" Height="25" Margin="0,50,0,0">Max Memory</Label>
                     <ComboBox Name="MaxMemory" Grid.Column="1" VerticalAlignment="Top" IsEditable="True" Height="25" Margin="0,50,0,0">
                         <ComboBoxItem>256M</ComboBoxItem>
                         <ComboBoxItem>512M</ComboBoxItem>
@@ -42,7 +42,7 @@
                         <Separator />
                         <ComboBoxItem IsEnabled="False">All Available</ComboBoxItem>
                     </ComboBox>
-                    <Label Grid.Column="0" VerticalAlignment="Top" Height="25" Margin="0,75,0,0">Initial Memory</Label>
+                    <Label Grid.Column="0" Style="{StaticResource glassText}" VerticalAlignment="Top" Height="25" Margin="0,75,0,0">Initial Memory</Label>
                     <ComboBox Name="InitialMemory" Grid.Column="1" VerticalAlignment="Top" IsEditable="True" Height="25" Margin="0,75,0,0">
                         <ComboBoxItem>256M</ComboBoxItem>
                         <ComboBoxItem>512M</ComboBoxItem>
@@ -58,9 +58,9 @@
                         <Separator />
                         <ComboBoxItem IsEnabled="False">All Available</ComboBoxItem>
                     </ComboBox>
-                    <CheckBox Name="UseXincgc" Grid.ColumnSpan="2" Content="Use Incremental Garbage Collection (-Xincgc)" Margin="10,105,0,0" Height="25" VerticalAlignment="Top" />
-                    <CheckBox Name="UseServer" Grid.ColumnSpan="2" Content="Use Server VM (-server)" Margin="10,125,0,0" Height="25" VerticalAlignment="Top" />
-                    <Label Grid.Column="0" VerticalAlignment="Top" Margin="0,150,0,0">Other VM Args</Label>
+                    <CheckBox Name="UseXincgc" Grid.ColumnSpan="2" Content="Use Incremental Garbage Collection (-Xincgc)" Margin="10,105,0,0" Height="25" VerticalAlignment="Top" Style="{StaticResource glassCheckbox}" />
+                    <CheckBox Name="UseServer" Grid.ColumnSpan="2" Content="Use Server VM (-server)" Margin="10,125,0,0" Height="25" VerticalAlignment="Top" Style="{StaticResource glassCheckbox}" />
+                    <Label Grid.Column="0" Style="{StaticResource glassText}" VerticalAlignment="Top" Margin="0,150,0,0" >Other VM Args</Label>
                     <TextBox Name="VMArgs" Grid.Column="1" VerticalAlignment="Top" Margin="0,150,0,0" Height="25"></TextBox>
                 </Grid>
             </TabItem>

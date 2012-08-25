@@ -115,7 +115,7 @@ namespace tman0.Launcher.UI
 
         private void Exit_Click_1(object sender, RoutedEventArgs e)
         {
-            this.Close();
+            this.Show();
         }
 
         private void Setup_Click_1(object sender, RoutedEventArgs e)

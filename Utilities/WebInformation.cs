@@ -37,7 +37,6 @@ namespace tman0.Launcher.Utilities
             window.LoadingText.Content = "Downloading update info.";
             WebClient w = new WebClient();
             string a = await w.DownloadStringTaskAsync(new Uri("https://dl.dropbox.com/u/37049399/MCLauncher/LauncherInformation.xml"));
-            MessageBox.Show(a);
             StringReader r = new StringReader(a);
             XmlSerializer s = new XmlSerializer(typeof(LauncherInformation));
             LauncherInformation i;

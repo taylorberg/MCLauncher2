@@ -19,7 +19,6 @@ namespace tman0.Launcher.Minecraft
             window.LoadingBox.Visibility = Visibility.Visible;
             window.LoadingText.Content = "Logging in...";
             string[] AuthenticationString = await AuthenticatePlayer(username, password);
-            MessageBox.Show(AuthenticationString.ToString());
             if (!(AuthenticationString.Length >= 3))
             {
                 TaskDialogOptions o = new TaskDialogOptions();
@@ -42,7 +41,7 @@ namespace tman0.Launcher.Minecraft
         {
             Process p = new Process();
             ProcessStartInfo i = new ProcessStartInfo();
-            i.FileName = /*LauncherSettings.Default.JavaLocation;*/ @"C:\Program Files\Java\jre7\bin\java.exe";
+            i.FileName = LauncherSettings.Default.JavaLocation; // @"C:\Program Files\Java\jre7\bin\java.exe";
             i.Arguments += "-cp \"" + Globals.LauncherDataPath + @"\Minecraft\bin\LWJGL\jinput.jar;" + Globals.LauncherDataPath + @"\Minecraft\bin\LWJGL\lwjgl.jar;" + Globals.LauncherDataPath + @"\Minecraft\bin\LWJGL\lwjgl_util.jar;" + Globals.LauncherDataPath + @"\Minecraft\bin\minecraft.jar;" + "\"";
             i.Arguments += " -Xms" + LauncherSettings.Default.InitialMemory;
             i.Arguments += " -Xmx" + LauncherSettings.Default.MaxMemory;
