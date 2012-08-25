@@ -6,8 +6,8 @@
     <Grid>
         <Grid Background="#AA000000" VerticalAlignment="Bottom">
             <Button Name="Apply" HorizontalAlignment="Left" Margin="2,2,0,0" Height="22" VerticalAlignment="Top" Click="Apply_Click">Apply</Button>
-            <Button Name="OK" HorizontalAlignment="Center" Margin="2,2,2,2" Click="OK_Click">Apply and Close</Button>
-            <Button Name="Cancel" HorizontalAlignment="Right" Margin="2,2,2,2" Click="Cancel_Click">Cancel</Button>
+            <Button Name="OK" HorizontalAlignment="Center" Margin="2,2,2,2" Click="OK_Click" IsDefault="True">Apply and Close</Button>
+            <Button Name="Cancel" HorizontalAlignment="Right" Margin="2,2,2,2" Click="Cancel_Click" IsCancel="True">Cancel</Button>
         </Grid>
         <TabControl HorizontalAlignment="Left" Height="379" VerticalAlignment="Top" Width="323" Background="#0000">
             <TabItem Header="Java Settings">
@@ -23,7 +23,7 @@
                         <ComboBoxItem>C:\Program Files\Java\jre6\bin</ComboBoxItem>
                         <ComboBoxItem>C:\Program Files\Java\jre7\bin</ComboBoxItem>
                     </ComboBox>
-                    <Button Name="BrowsePath" Grid.Column="1" VerticalAlignment="Top" Margin="0,0,0,0" HorizontalAlignment="Right" Height="25" Width="25">...</Button>
+                    <Button Name="BrowsePath" Grid.Column="1" VerticalAlignment="Top" Margin="0,0,0,0" HorizontalAlignment="Right" Height="25" Width="25" Click="BrowsePath_Click_1">...</Button>
                     <Button Name="ScanPath" Grid.Column="1" VerticalAlignment="Top" Margin="0,25,0,0" Height="25" IsEnabled="False">Scan for Java</Button>
                     
                     <Label Grid.Column="0" Style="{StaticResource glassText}" VerticalAlignment="Top" Height="25" Margin="0,50,0,0">Max Memory</Label>

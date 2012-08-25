@@ -77,5 +77,20 @@ namespace tman0.Launcher.UI
         {
             this.Hide();
         }
+
+        private void BrowsePath_Click_1(object sender, RoutedEventArgs e)
+        {
+            Microsoft.Win32.OpenFileDialog dlg = new Microsoft.Win32.OpenFileDialog();
+            dlg.Title = "Find \"java.exe\".";
+            dlg.FileName = "java.exe";
+            dlg.DefaultExt = "java.exe";
+            dlg.Filter = "Java|java.exe";
+
+            bool? result = dlg.ShowDialog();
+            if (result == true)
+            {
+                JavaPath.Text = dlg.FileName;
+            }
+        }
     }
 }
