@@ -1,0 +1,21 @@
+﻿<Window x:Class="tman0.Launcher.UI.SnapshotDownloader"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        Title="Snapshots" Height="390" Width="400" Loaded="Window_Loaded_1" ResizeMode="NoResize"
+        DataContext="{Binding RelativeSource={RelativeSource Self}}">
+    <Grid>
+        <ListView Name="JarList" ItemsSource="{Binding Releases}" Margin="0,0,0,30">
+            <ListView.View>
+                <GridView>
+                    <GridViewColumn Header="Version" Width="75" DisplayMemberBinding="{Binding Version}"/>
+                    <GridViewColumn Header="Size" Width="75" DisplayMemberBinding="{Binding Size}"/>
+                    <GridViewColumn Header="Uploaded" Width="175" DisplayMemberBinding="{Binding Uploaded}"/>
+                    <GridViewColumn Header="Type" Width="60" DisplayMemberBinding="{Binding Type}" />
+                </GridView>
+            </ListView.View>
+        </ListView>
+        <Button Content="Download" HorizontalAlignment="Left" Margin="0,0,0,3" VerticalAlignment="Bottom" Width="75"/>
+        <Button Content="Restore Old" Margin="120,0,120,3" VerticalAlignment="Bottom"/>
+        <Button Content="Force Update" HorizontalAlignment="Right" Margin="0,0,0,3" VerticalAlignment="Bottom" Width="75"/>
+    </Grid>
+</Window>

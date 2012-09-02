@@ -16,6 +16,7 @@
             <Label Name="SystemInfo" Content="" FontSize="10" Foreground="White" HorizontalAlignment="Left" VerticalAlignment="Bottom" VerticalContentAlignment="Bottom"/>
             <Menu Background="#00000000" FontSize="15" BorderBrush="#00000000" BorderThickness="3" Margin="0,5,5,5" Foreground="White" HorizontalAlignment="Right" VerticalAlignment="Center">
                 <MenuItem Header="Tools">
+                    <MenuItem Header="Version Changer" Foreground="Black" Name="VChanger" Click="VChanger_Click_1" />
                     <MenuItem Header="Setup" Foreground="Black" Name="Setup" Click="Setup_Click_1">
                         <MenuItem.Icon>
                             <Image Source="/Images/Gear.png" Height="22" />

@@ -122,5 +122,10 @@ namespace tman0.Launcher.UI
         {
             Globals.Windows.SettingsEditor.ShowDialog();
         }
+
+        private void VChanger_Click_1(object sender, RoutedEventArgs e)
+        {
+            new SnapshotDownloader().ShowDialog();
+        }
     }
 }
