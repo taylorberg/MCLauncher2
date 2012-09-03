@@ -35,7 +35,7 @@ namespace tman0.Launcher.Utilities
                 else
                 {
                     WebClient w = new WebClient();
-                    await w.DownloadFileTaskAsync(new Uri("https://dl.dropbox.com/u/37049399/MCLauncher/Background.png"), Globals.LauncherDataPath + @"\Background.png");
+                    await w.DownloadFileTaskAsync(new Uri(LauncherInformation.Current.BackgroundLocation), Globals.LauncherDataPath + @"\Background.png");
                     ImageBrush brush = new ImageBrush();
                     brush.ImageSource = new BitmapImage(new Uri("file://" + Globals.LauncherDataPath + @"\Background.png"));
                     window.Background = brush;
