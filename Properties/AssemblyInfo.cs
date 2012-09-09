@@ -7,12 +7,12 @@ using System.Windows;
 // General Information about an assembly is controlled through the following 
 // set of attributes. Change these attribute values to modify the information
 // associated with an assembly.
-[assembly: AssemblyTitle("tman0.Launcher")]
+[assembly: AssemblyTitle("MCLauncher by tman0")]
 [assembly: AssemblyDescription("")]
 [assembly: AssemblyConfiguration("")]
 [assembly: AssemblyCompany("")]
-[assembly: AssemblyProduct("tman0.Launcher")]
-[assembly: AssemblyCopyright("Copyright ©  2012")]
+[assembly: AssemblyProduct("MCLauncher")]
+[assembly: AssemblyCopyright("Copyright ©  2012 tman0")]
 [assembly: AssemblyTrademark("")]
 [assembly: AssemblyCulture("")]
 
