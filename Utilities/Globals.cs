@@ -4,6 +4,8 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
+using tman0.Launcher.UI;
+
 namespace tman0.Launcher.Utilities
 {
     class Globals
@@ -12,8 +14,8 @@ namespace tman0.Launcher.Utilities
 
         public static class Windows
         {
-            public static tman0.Launcher.UI.MainWindow MainWindow;
-            public static readonly tman0.Launcher.UI.SettingsEditor SettingsEditor = new UI.SettingsEditor();
+            public static MainWindow MainWindow;
+            public static readonly SettingsEditor SettingsEditor = new UI.SettingsEditor();
         }
     }
 }

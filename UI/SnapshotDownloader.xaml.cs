@@ -64,6 +64,7 @@ namespace tman0.Launcher.UI
                     string IsSnapshot = "Release";
                     if(!o.Key.Contains("minecraft.jar")) continue;
                     if (Regex.IsMatch(o.Key, "[0-9][0-9]w[0-9][0-9]")) IsSnapshot = "Snapshot";
+                    else if (o.Key.Contains("pre")) IsSnapshot = "Pre-release";
                     
                     _Releases.Add(new Release {  Version = o.Key.Split('/')[0],
                                                 Size = (o.Size / 1024).ToString() + "KB", 

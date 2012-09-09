@@ -65,7 +65,7 @@ namespace tman0.Launcher.Minecraft
         public static async Task<string[]> AuthenticatePlayer(string username, string password)
         {
             WebClient w = new WebClient();
-            string res = w.DownloadString("https://login.minecraft.net/?user=" + username + "&password=" + password + "&version=9001");
+            string res = await w.DownloadStringTaskAsync("https://login.minecraft.net/?user=" + username + "&password=" + password + "&version=9001");
             return res.Split(':');
         }
     }
