@@ -51,6 +51,8 @@ namespace tman0.Launcher.UI
         #region Event Handlers
         private async void MainWindow_Loaded_1(object sender, RoutedEventArgs e)
         {
+            Globals.Windows.MainWindow = this;
+
             LauncherSettings.Load();
 
             WebClient w = new WebClient();

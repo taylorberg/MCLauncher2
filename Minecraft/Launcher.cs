@@ -4,8 +4,10 @@ using System.Diagnostics;
 using System.Linq;
 using System.Net;
 using System.Text;
+using System.Threading;
 using System.Threading.Tasks;
 using System.Windows;
+using System.Windows.Threading;
 using TaskDialogInterop;
 using tman0.Launcher.UI;
 using tman0.Launcher.Utilities;
@@ -69,7 +71,11 @@ namespace tman0.Launcher.Minecraft
 
         static void MinecraftClosed(object sender, EventArgs e)
         {
-            Application.Current.Shutdown(0);
+            // DIRTY HACK INBOUND
+            Thread t = new Thread(new ThreadStart(() => { Globals.Windows.MainWindow.Dispatcher.Invoke(Application.Current.Shutdown); }));
+            t.SetApartmentState(ApartmentState.STA);
+            t.Start();
+            t.Join();
         }
 
         public static async Task<string[]> AuthenticatePlayer(string username, string password)
