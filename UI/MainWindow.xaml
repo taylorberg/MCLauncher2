@@ -49,7 +49,7 @@
         
         <Grid Name="Info" Background="#AA000000"  HorizontalAlignment="Right" VerticalAlignment="Stretch"  Margin="0,60,20,50" Width="275">
             <Label Content="Minecraft News" Foreground="White" FontSize="15" />
-            <FlowDocumentScrollViewer IsSelectionEnabled="False" Name="Announcements" Margin="2,30,2,2" Padding="0">
+            <FlowDocumentScrollViewer IsSelectionEnabled="True" Cursor="Arrow" Name="Announcements" Margin="2,30,2,2" Padding="0">
                 <FlowDocument PagePadding="3" TextAlignment="Center" FontFamily="Segoe UI; Arial" FontSize="15" Foreground="White">
                     <Paragraph>
                         An error occurred getting today's news. Is your internet down?
