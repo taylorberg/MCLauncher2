@@ -59,7 +59,17 @@ namespace tman0.Launcher.Minecraft
             i.CreateNoWindow = true;
             p.StartInfo = i;
             p.Start();
+            p.EnableRaisingEvents = true;
+            p.PriorityBoostEnabled = true;
+            p.PriorityClass = ProcessPriorityClass.AboveNormal;
+            p.Exited += MinecraftClosed;
+            window.Hide();
             return p;
+        }
+
+        static void MinecraftClosed(object sender, EventArgs e)
+        {
+            Application.Current.Shutdown(0);
         }
 
         public static async Task<string[]> AuthenticatePlayer(string username, string password)
