@@ -259,6 +259,7 @@
     </BootstrapperPackage>
   </ItemGroup>
   <ItemGroup>
+    <Resource Include="Settings.xml" />
     <Resource Include="NotifyIcon\DefaultTrayIcon.ico" />
     <Resource Include="Images\Gear.png" />
     <EmbeddedResource Include="Libraries\AWSSDK.dll" />

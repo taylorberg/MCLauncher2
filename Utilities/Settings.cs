@@ -10,25 +10,29 @@ namespace tman0.Launcher.Utilities
 {
     public class LauncherSettings
     {
-        public static LauncherSettings Default {get; private set;}
+        public static LauncherSettings Default {get; set;}
         
         public static void Load()
         {
             if (!File.Exists(Globals.LauncherDataPath + @"\Settings.xml")) Save();
             XmlSerializer s = new XmlSerializer(typeof(LauncherSettings));
-            Default = (LauncherSettings)s.Deserialize(File.OpenRead(Globals.LauncherDataPath + @"\Settings.xml"));
+            FileStream f = File.OpenRead(Globals.LauncherDataPath + @"\Settings.xml");
+            Default = (LauncherSettings)s.Deserialize(f);
+            f.Close();
         }
 
         public static void Save()
         {
             XmlSerializer s = new XmlSerializer(typeof(LauncherSettings));
             File.Delete(Globals.LauncherDataPath + @"\Settings.xml");
-            s.Serialize(File.OpenWrite(Globals.LauncherDataPath + @"\Settings.xml"), Default);
+            FileStream f = File.OpenWrite(Globals.LauncherDataPath + @"\Settings.xml");
+            s.Serialize(f, Default);
+            f.Close();
         }
 
         public string JavaLocation = @"C:\Program Files\Java\jre7\bin\java.exe";
-        public string MaxMemory = "8G";
-        public string InitialMemory = "4G";
+        public string MaxMemory = "1G";
+        public string InitialMemory = "512M";
         public bool UseXincgc = true;
         public bool UseServer = false;
         public string VMArgs = "";

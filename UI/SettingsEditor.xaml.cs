@@ -28,6 +28,8 @@ namespace tman0.Launcher.UI
 
         public void Load()
         {
+            if (LauncherSettings.Default == null) LauncherSettings.Default = new LauncherSettings();
+            LauncherSettings.Load();
             this.Load(LauncherSettings.Default);
         }
 
@@ -43,6 +45,7 @@ namespace tman0.Launcher.UI
 
         public void Save()
         {
+            LauncherSettings.Save();
             this.Save(LauncherSettings.Default);
         }
 
