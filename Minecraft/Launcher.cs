@@ -54,6 +54,9 @@ namespace tman0.Launcher.Minecraft
             i.Arguments += " net.minecraft.client.Minecraft";
             i.Arguments += " " + Username + " " + AuthCode;
 
+            log.WriteLine("[MCL] Launching " + i.FileName);
+            log.WriteLine("[MCL] Args: " + i.Arguments);
+
             i.UseShellExecute = false;
             i.RedirectStandardError = true;
             i.RedirectStandardInput = true;
@@ -61,6 +64,8 @@ namespace tman0.Launcher.Minecraft
             i.CreateNoWindow = true;
             p.StartInfo = i;
             p.Start();
+            log.WriteLine("[MCL] Minecraft Started");
+            log.WriteLine("[MCL] " + p.VirtualMemorySize64 / 1024 / 1024 + "MB Allocated at " + p.StartTime.ToString());
             p.EnableRaisingEvents = true;
             p.PriorityBoostEnabled = true;
             p.PriorityClass = ProcessPriorityClass.AboveNormal;
@@ -81,11 +86,12 @@ namespace tman0.Launcher.Minecraft
 
         static void MinecraftClosed(object sender, EventArgs e)
         {
+            log.WriteLine("[MCL] Minecraft died");
             // DIRTY HACK INBOUND
-            Thread t = new Thread(new ThreadStart(() => { Globals.Windows.MainWindow.Dispatcher.Invoke(Application.Current.Shutdown); }));
-            t.SetApartmentState(ApartmentState.STA);
-            t.Start();
-            t.Join();
+            //Thread t = new Thread(new ThreadStart(() => { Globals.Windows.MainWindow.Dispatcher.Invoke(Application.Current.Shutdown); }));
+            //t.SetApartmentState(ApartmentState.STA);
+            //t.Start();
+            //t.Join();
         }
 
         public static async Task<string[]> AuthenticatePlayer(string username, string password)

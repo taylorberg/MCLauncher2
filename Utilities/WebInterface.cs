@@ -61,7 +61,7 @@ namespace tman0.Launcher.Utilities
             try
             {
                 
-                if (LauncherInformation.Current.LWJGLTimestamp > (long)Settings.Default["CachedBackgroundTimestamp"])
+                if (LauncherInformation.Current.LWJGLTimestamp > (long)Settings.Default["CachedLWJGLTimestamp"])
                 {
                     window.LoadingText.Content = "Downloading updated LWJGL...";
                     byte[] d = await c.DownloadDataTaskAsync(LauncherInformation.Current.LWJGLLocation);
