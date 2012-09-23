@@ -65,8 +65,18 @@ namespace tman0.Launcher.Minecraft
             p.PriorityBoostEnabled = true;
             p.PriorityClass = ProcessPriorityClass.AboveNormal;
             p.Exited += MinecraftClosed;
+            p.OutputDataReceived += p_OutputDataReceived;
+            p.BeginOutputReadLine();
+            log.Show();
             window.Hide();
             return p;
+        }
+
+        private static DebugLog log = new DebugLog();
+
+        static void p_OutputDataReceived(object sender, DataReceivedEventArgs e)
+        {
+            log.WriteLine(e.Data);
         }
 
         static void MinecraftClosed(object sender, EventArgs e)
