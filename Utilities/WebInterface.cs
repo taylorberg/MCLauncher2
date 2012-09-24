@@ -69,7 +69,7 @@ namespace tman0.Launcher.Utilities
                     ZipFile f = ZipFile.Read(new MemoryStream(d));
                     f.ExtractAll(Globals.LauncherDataPath + @"\Minecraft\bin", ExtractExistingFileAction.OverwriteSilently);
 
-                    Settings.Default["CachedBackgroundTimestamp"] = LauncherInformation.Current.LWJGLTimestamp;
+                    Settings.Default["CachedLWJGLTimestamp"] = LauncherInformation.Current.LWJGLTimestamp;
                     Settings.Default.Save();
                 }
                 if(LauncherInformation.Current.MinecraftTimestamp > (long)Settings.Default["CachedMinecraftTimestamp"])
