@@ -49,7 +49,7 @@ namespace tman0.Launcher.UI
         }
         #endregion
         #region Event Handlers
-        private async void MainWindow_Loaded_1(object sender, RoutedEventArgs e)
+        private async void MainWindow_Loaded_1(object sender, EventArgs e)
         {
             Globals.Windows.MainWindow = this;
 
