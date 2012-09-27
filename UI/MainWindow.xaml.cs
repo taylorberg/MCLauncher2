@@ -106,7 +106,7 @@ namespace tman0.Launcher.UI
 
         private void MainWindow_Closed_1(object sender, EventArgs e)
         {
-            
+            Application.Current.Shutdown(0);
         }
         #endregion
 

@@ -33,7 +33,7 @@ namespace tman0.Launcher.UI
 
         private void Button_Click_1(object sender, RoutedEventArgs e)
         {
-
+            this.Close();
         }
 
         public void WriteLine(string text)

@@ -88,10 +88,10 @@ namespace tman0.Launcher.Minecraft
         {
             log.WriteLine("[MCL] Minecraft died");
             // DIRTY HACK INBOUND
-            //Thread t = new Thread(new ThreadStart(() => { Globals.Windows.MainWindow.Dispatcher.Invoke(Application.Current.Shutdown); }));
-            //t.SetApartmentState(ApartmentState.STA);
-            //t.Start();
-            //t.Join();
+            Thread t = new Thread(new ThreadStart(() => { Globals.Windows.MainWindow.Dispatcher.Invoke(Application.Current.Shutdown); }));
+            t.SetApartmentState(ApartmentState.STA);
+            t.Start();
+            t.Join();
         }
 
         public static async Task<string[]> AuthenticatePlayer(string username, string password)
