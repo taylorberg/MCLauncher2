@@ -116,5 +116,12 @@ namespace tman0.Launcher.UI
             File.Delete(Globals.LauncherDataPath + "/Minecraft/bin/minecraft.jar");
             File.Copy(Globals.LauncherDataPath + "/Minecraft/OldMinecraft.jar", Globals.LauncherDataPath + "/Minecraft/bin/minecraft.jar");
         }
+
+        private void ForceUpdateClick(object sender, RoutedEventArgs e)
+        {
+            Properties.Settings.Default.CachedMinecraftTimestamp = 0;
+            Properties.Settings.Default.CachedLWJGLTimestamp = 0;
+            Properties.Settings.Default.CachedBackgroundTimestamp = 0;
+        }
     }
 }
