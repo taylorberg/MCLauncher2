@@ -14,5 +14,6 @@ namespace tman0.Launcher.Utilities
         public string Size {get; set;}
         public string Uploaded {get; set;}
         public string Type {get; set;}
+        public string Key { get; set; }
     }
 }

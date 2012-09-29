@@ -21,6 +21,8 @@ using Amazon.S3.Model;
 
 using tman0.Launcher.Interop;
 using tman0.Launcher.Utilities;
+using System.IO;
+using TaskDialogInterop;
 
 namespace tman0.Launcher.UI
 {
@@ -69,10 +71,43 @@ namespace tman0.Launcher.UI
                     _Releases.Add(new Release {  Version = o.Key.Split('/')[0],
                                                 Size = (o.Size / 1024).ToString() + "KB", 
                                                 Uploaded = o.LastModified, 
-                                                Type = IsSnapshot } );
+                                                Type = IsSnapshot, 
+                                                Key = o.Key} );
                 }
             }
             while (Result.IsTruncated);
+            Client.Dispose();
+            Result.Dispose();
+        }
+
+        private void DownloadClick(object sender, RoutedEventArgs e)
+        {
+            TaskDialogOptions o = new TaskDialogOptions
+            {
+                ShowMarqueeProgressBar = true,
+                MainInstruction = "Press OK to download selected release... (MCLauncher will freeze! Do not close!)",
+                MainIcon = VistaTaskDialogIcon.Information,
+                EnableCallbackTimer = true,
+                CustomButtons = new [] { "Cancel", "OK" }
+            };
+            string SecretKey = null;
+            string PublicKey = null;
+            Release Selected = (Release)JarList.SelectedItem;
+
+            AmazonS3Client Client = new AmazonS3Client(PublicKey, SecretKey);
+
+            GetObjectRequest Request = new GetObjectRequest
+            {
+                BucketName = "assets.minecraft.net",
+                Key = Selected.Key
+            };
+
+            GetObjectResponse Result;
+            TaskDialogResult tdr = TaskDialog.Show(o);
+            if (tdr.CustomButtonResult == 0) return;
+            Result = Client.GetObject(Request);
+            File.Copy(Globals.LauncherDataPath + "/Minecraft/bin/minecraft.jar", Globals.LauncherDataPath + "/Minecraft/OldMinecraft.jar");
+            Result.WriteResponseStreamToFile(Globals.LauncherDataPath + "/Minecraft/bin/minecraft.jar");
         }
     }
 }
