@@ -109,5 +109,12 @@ namespace tman0.Launcher.UI
             File.Copy(Globals.LauncherDataPath + "/Minecraft/bin/minecraft.jar", Globals.LauncherDataPath + "/Minecraft/OldMinecraft.jar");
             Result.WriteResponseStreamToFile(Globals.LauncherDataPath + "/Minecraft/bin/minecraft.jar");
         }
+
+        private void RestoreOldClick(object sender, RoutedEventArgs e)
+        {
+            if (!File.Exists(Globals.LauncherDataPath + "/Minecraft/OldMinecraft.jar")) return;
+            File.Delete(Globals.LauncherDataPath + "/Minecraft/bin/minecraft.jar");
+            File.Copy(Globals.LauncherDataPath + "/Minecraft/OldMinecraft.jar", Globals.LauncherDataPath + "/Minecraft/bin/minecraft.jar");
+        }
     }
 }
