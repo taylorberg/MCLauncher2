@@ -9,7 +9,7 @@
                 <GridView>
                     <GridViewColumn Header="Version" Width="75" DisplayMemberBinding="{Binding Version}"/>
                     <GridViewColumn Header="Size" Width="75" DisplayMemberBinding="{Binding Size}"/>
-                    <GridViewColumn Header="Uploaded" Width="175" DisplayMemberBinding="{Binding Uploaded}"/>
+                    <GridViewColumn Header="Uploaded" Width="175" DisplayMemberBinding="{Binding Uploaded}" />
                     <GridViewColumn Header="Type" Width="60" DisplayMemberBinding="{Binding Type}" />
                 </GridView>
             </ListView.View>

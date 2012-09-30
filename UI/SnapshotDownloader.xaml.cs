@@ -53,11 +53,12 @@ namespace tman0.Launcher.UI
 
             ListObjectsRequest Request = new ListObjectsRequest
             {
-                BucketName = "assets.minecraft.net"
+                BucketName = "assets.minecraft.net",
             };
 
             ListObjectsResponse Result;
 
+            List<Release> releases = new List<Release>();
             do
             {
                 Result = Client.ListObjects(Request);
@@ -67,15 +68,20 @@ namespace tman0.Launcher.UI
                     if(!o.Key.Contains("minecraft.jar")) continue;
                     if (Regex.IsMatch(o.Key, "[0-9][0-9]w[0-9][0-9]")) IsSnapshot = "Snapshot";
                     else if (o.Key.Contains("pre")) IsSnapshot = "Pre-release";
-                    
-                    _Releases.Add(new Release {  Version = o.Key.Split('/')[0],
+                    releases.Add(new Release {  Version = o.Key.Split('/')[0],
                                                 Size = (o.Size / 1024).ToString() + "KB", 
-                                                Uploaded = o.LastModified, 
+                                                Uploaded = DateTime.Parse(o.LastModified), 
                                                 Type = IsSnapshot, 
                                                 Key = o.Key} );
                 }
             }
             while (Result.IsTruncated);
+            releases.Sort(new Comparison<Release>((x, y) => DateTime.Compare(y.Uploaded, x.Uploaded)));
+            _Releases.Clear();
+            foreach (Release r in releases)
+            {
+                _Releases.Add(r);
+            }
             Client.Dispose();
             Result.Dispose();
         }
