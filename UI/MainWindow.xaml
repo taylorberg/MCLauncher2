@@ -59,7 +59,7 @@
         </Grid>
         
         <Grid Name="BottomBar" Background="#AA000000" VerticalAlignment="Bottom">
-            <TextBox Name="Username" HorizontalAlignment="Left" Width="150" Foreground="White" FontWeight="Bold" Background="#444444" Margin="5,5,0,5" />
+            <ComboBox Name="Username" IsEditable="True" HorizontalAlignment="Left" Width="150" Foreground="White" FontWeight="Bold" Background="#444444" Margin="5,5,0,5" ItemsSource="{Binding Source=Usernames.Username}" />
             <PasswordBox Name="Password" HorizontalAlignment="Left" Width="150" Foreground="White" FontWeight="Bold" Background="#444444" Margin="160,5,0,5" />
             <Button Name="Login" Content="Play" Click="Login_Click_1" HorizontalAlignment="Right" Width="50" Background="Green" Margin="5,5,5,5" Foreground="White" IsDefault="True" />
             <Button Name="Mods" Content="Mods" IsEnabled="False" HorizontalAlignment="Right" Width="50" Background="Green" Margin="5,5,55,5" Foreground="White" />

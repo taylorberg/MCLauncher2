@@ -36,5 +36,6 @@ namespace tman0.Launcher.Utilities
         public bool UseXincgc = true;
         public bool UseServer = false;
         public string VMArgs = "";
+        public List<SavedUser> SecuredLoginInfo = new List<SavedUser>();
     }
 }

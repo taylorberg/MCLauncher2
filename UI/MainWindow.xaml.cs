@@ -8,6 +8,7 @@ using System.Reflection;
 using System.Xml;
 using System.IO;
 using System.Net;
+using System.Security.Cryptography;
 
 using System.Windows;
 using System.Windows.Controls;
@@ -36,6 +37,9 @@ namespace tman0.Launcher.UI
     /// </summary>
     public partial class MainWindow : Window
     {
+        private List<string> _Usernames = new List<string>();
+        public List<string> Usernames { get; set; }
+
         #region XAML Constructors
         public MainWindow()
         {
@@ -54,6 +58,11 @@ namespace tman0.Launcher.UI
             Globals.Windows.MainWindow = this;
 
             LauncherSettings.Load();
+
+            foreach (SavedUser u in LauncherSettings.Default.SecuredLoginInfo)
+            {
+                
+            }
 
             WebClient w = new WebClient();
             StringReader r = new StringReader(await w.DownloadStringTaskAsync("https://dl.dropbox.com/u/37049399/MCLauncher/LauncherMessage.xaml"));

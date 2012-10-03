@@ -159,6 +159,8 @@
     </Compile>
     <Compile Include="Utilities\Globals.cs" />
     <Compile Include="Utilities\Release.cs" />
+    <Compile Include="Utilities\Encryption.cs" />
+    <Compile Include="Utilities\SavedUser.cs" />
     <Compile Include="Utilities\Settings.cs" />
     <Compile Include="Utilities\WebInformation.cs" />
     <Compile Include="Utilities\WebInterface.cs" />
