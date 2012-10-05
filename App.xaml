@@ -1,7 +1,7 @@
 ﻿<Application x:Class="tman0.Launcher.App"
              xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
              xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
-             StartupUri="UI/MainWindow.xaml">
+             StartupUri="UI/MainWindow.xaml" DispatcherUnhandledException="Application_DispatcherUnhandledException_1">
     <Application.Resources>
          <ResourceDictionary>
              <Style TargetType="Label" x:Key="glassText">

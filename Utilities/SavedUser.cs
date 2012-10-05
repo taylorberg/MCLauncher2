@@ -11,10 +11,10 @@ namespace tman0.Launcher.Utilities
     [XmlRoot("User")]
     public class SavedUser
     {
-        [XmlAttribute("Username")]
+        [XmlElement("Username")]
         public string Username { get; set; }
 
-        [XmlAttribute("Password")]
-        public string Password { get; set; }
+        [XmlElement(DataType="hexBinary")]
+        public byte[] EncryptedPassword { get; set; }
     }
 }

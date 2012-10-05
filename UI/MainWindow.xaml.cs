@@ -55,6 +55,7 @@ namespace tman0.Launcher.UI
         #region Event Handlers
         private async void MainWindow_Loaded_1(object sender, EventArgs e)
         {
+            throw new Exception();
             Globals.Windows.MainWindow = this;
 
             LauncherSettings.Load();
