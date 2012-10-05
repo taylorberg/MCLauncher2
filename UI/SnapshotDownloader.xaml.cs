@@ -112,7 +112,8 @@ namespace tman0.Launcher.UI
             TaskDialogResult tdr = TaskDialog.Show(o);
             if (tdr.CustomButtonResult == 0) return;
             Result = Client.GetObject(Request);
-            File.Copy(Globals.LauncherDataPath + "/Minecraft/bin/minecraft.jar", Globals.LauncherDataPath + "/Minecraft/OldMinecraft.jar");
+            File.Copy(Globals.LauncherDataPath + "/Minecraft/bin/minecraft.jar", Globals.LauncherDataPath + "/Minecraft/OldMinecraft.jar", true);
+            File.Delete(Globals.LauncherDataPath + "/Minecraft/bin/minecraft.jar");
             Result.WriteResponseStreamToFile(Globals.LauncherDataPath + "/Minecraft/bin/minecraft.jar");
         }
 

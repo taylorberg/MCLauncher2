@@ -9,15 +9,13 @@ namespace tman0.Launcher.Utilities
 {
     class Encryption
     {
-        private readonly static string Key = "wElLiCoUlDcOmEuPwItHaBeTtErKeYtHaNtHiSbUtIdK";
-        private readonly static byte[] IV = new byte[] { 1, 2, 3, 4, 5, 6, 7, 8, 9, 10 };
-        public static string Encrypt(string PlainText)
+        public static byte[] Encrypt(string PlainText)
         {
-            throw new NotImplementedException();
+            return ProtectedData.Protect(UTF8Encoding.UTF8.GetBytes(PlainText), new byte[] { 200, 201, 39, 203, 21, 32, 34 }, DataProtectionScope.CurrentUser);
         }
-        public static string Decrypt(string EncryptedString)
+        public static string Decrypt(byte[] EncryptedData)
         {
-            throw new NotImplementedException();
+            return UTF8Encoding.UTF8.GetString(ProtectedData.Unprotect(EncryptedData, new byte[] { 200, 201, 39, 203, 21, 32, 34 }, DataProtectionScope.CurrentUser));
         }
     }
 }
