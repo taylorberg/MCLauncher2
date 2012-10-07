@@ -55,15 +55,14 @@ namespace tman0.Launcher.UI
         #region Event Handlers
         private async void MainWindow_Loaded_1(object sender, EventArgs e)
         {
-            throw new Exception();
             Globals.Windows.MainWindow = this;
 
             LauncherSettings.Load();
 
-            foreach (SavedUser u in LauncherSettings.Default.SecuredLoginInfo)
+            /*foreach (SavedUser u in LauncherSettings.Default.SecuredLoginInfo)
             {
                 
-            }
+            }*/
 
             WebClient w = new WebClient();
             StringReader r = new StringReader(await w.DownloadStringTaskAsync("https://dl.dropbox.com/u/37049399/MCLauncher/LauncherMessage.xaml"));

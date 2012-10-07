@@ -26,7 +26,7 @@ namespace tman0.Launcher.Utilities
             long CurrentTimestamp = (long) Settings.Default["CachedBackgroundTimestamp"];
             window.LoadingProgress.IsIndeterminate = false;
             if (!Directory.Exists(Globals.LauncherDataPath)) Directory.CreateDirectory(Globals.LauncherDataPath);
-                if (LauncherInformation.Current.BackgroundTimestamp <= (long)Settings.Default["CachedBackgroundTimestamp"])
+                if ((long)Settings.Default["CachedBackgroundTimestamp"] == null || LauncherInformation.Current.BackgroundTimestamp <= (long)Settings.Default["CachedBackgroundTimestamp"])
                 {
                     ImageBrush brush = new ImageBrush();
                     brush.ImageSource = new BitmapImage(new Uri("file://" + Globals.LauncherDataPath + @"\Background.png"));
@@ -61,7 +61,7 @@ namespace tman0.Launcher.Utilities
             try
             {
                 
-                if (LauncherInformation.Current.LWJGLTimestamp > (long)Settings.Default["CachedLWJGLTimestamp"])
+                if ((long)Settings.Default["CachedLWJGLTimestamp"] == null || LauncherInformation.Current.LWJGLTimestamp > (long)Settings.Default["CachedLWJGLTimestamp"])
                 {
                     window.LoadingText.Content = "Downloading updated LWJGL...";
                     byte[] d = await c.DownloadDataTaskAsync(LauncherInformation.Current.LWJGLLocation);
@@ -72,7 +72,7 @@ namespace tman0.Launcher.Utilities
                     Settings.Default["CachedLWJGLTimestamp"] = LauncherInformation.Current.LWJGLTimestamp;
                     Settings.Default.Save();
                 }
-                if(LauncherInformation.Current.MinecraftTimestamp > (long)Settings.Default["CachedMinecraftTimestamp"])
+                if((long)Settings.Default["CachedMinecraftTimestamp"] == null || LauncherInformation.Current.MinecraftTimestamp > (long)Settings.Default["CachedMinecraftTimestamp"])
                 {
                     MessageBoxResult r = MessageBox.Show("Do you want to update Minecraft? (Latest version: " + LauncherInformation.Current.MinecraftVersion + ")", "MCLauncher", MessageBoxButton.YesNo, MessageBoxImage.Question);
 

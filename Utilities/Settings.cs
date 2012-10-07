@@ -23,6 +23,7 @@ namespace tman0.Launcher.Utilities
 
         public static void Save()
         {
+            if (!Directory.Exists(Globals.LauncherDataPath)) Directory.CreateDirectory(Globals.LauncherDataPath);
             XmlSerializer s = new XmlSerializer(typeof(LauncherSettings));
             File.Delete(Globals.LauncherDataPath + @"\Settings.xml");
             FileStream f = File.OpenWrite(Globals.LauncherDataPath + @"\Settings.xml");
