@@ -35,6 +35,7 @@ namespace tman0.Launcher.UI
 
         public void Load(LauncherSettings s)
         {
+            if (s == null) s = new LauncherSettings();
             InitialMemory.Text = s.InitialMemory;
             MaxMemory.Text = s.MaxMemory;
             JavaPath.Text = s.JavaLocation;
@@ -45,8 +46,8 @@ namespace tman0.Launcher.UI
 
         public void Save()
         {
-            LauncherSettings.Save();
             this.Save(LauncherSettings.Default);
+            LauncherSettings.Save();
         }
 
         public void Save(LauncherSettings s)

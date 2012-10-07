@@ -19,6 +19,13 @@ namespace tman0.Launcher.Utilities
             FileStream f = File.OpenRead(Globals.LauncherDataPath + @"\Settings.xml");
             Default = (LauncherSettings)s.Deserialize(f);
             f.Close();
+            if (Default == null)
+            {
+                f.Close();
+                Default = new LauncherSettings();
+                Save();
+                return;
+            }
         }
 
         public static void Save()
