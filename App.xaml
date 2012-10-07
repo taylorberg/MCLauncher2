@@ -16,6 +16,18 @@
                     </Trigger>
                 </Style.Triggers>
             </Style>
+            <Style TargetType="TextBlock" x:Key="glassTextBlock">
+                <Setter Property="Foreground" Value="Black" />
+                <Style.Triggers>
+                    <Trigger Property="Foreground" Value="Black">
+                        <Setter Property="Effect">
+                            <Setter.Value>
+                                <DropShadowEffect Color="White" BlurRadius="10" RenderingBias="Performance" ShadowDepth="0" Direction="0" />
+                            </Setter.Value>
+                        </Setter>
+                    </Trigger>
+                </Style.Triggers>
+            </Style>
             <Style TargetType="CheckBox" x:Key="glassCheckbox">
             <Setter Property="Foreground" Value="Black" />
             <Style.Triggers>
